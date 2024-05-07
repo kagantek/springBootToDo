@@ -8,6 +8,7 @@ public class ToDoAppSpringBootPracticeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ToDoAppSpringBootPracticeApplication.class, args);
+		System.out.println("print test");
 	}
 
 }
