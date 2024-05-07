@@ -22,7 +22,7 @@ public class TaskRepositoryTests {
         Task task = new Task();
         task.setTask_name("CSE348 Assignment");
         task.setTask_type("Academic");
-        task.setDeadline_date("2024-07-30");
+        task.setDeadline_date("05/14/2024");
 
         Task savedTask = repo.save(task);
 

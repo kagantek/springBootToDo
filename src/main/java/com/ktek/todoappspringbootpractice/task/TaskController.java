@@ -18,4 +18,10 @@ public class TaskController{
 
         return "tasks";
     }
+
+    @GetMapping("/tasks/new")
+    public String showCreateTaskForm(Model model) {
+        model.addAttribute("task", new Task());
+        return "task_form";
+    }
 }
