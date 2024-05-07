@@ -9,9 +9,13 @@
         <module name="ToDoApp-SpringBootPractice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MyWebApp" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MyWebApp" options="-parameters" />
       <module name="ToDoApp-SpringBootPractice" options="-parameters" />
     </option>
   </component>
