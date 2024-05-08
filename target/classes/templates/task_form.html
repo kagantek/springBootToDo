@@ -3,15 +3,16 @@
 <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Task</title>
+    <title>[[${pageTitle}]]</title>
 </head>
 <body>
 
 <div class="container-fluid text-center">
-   <div class="text-center"><h2>Add New Task</h2></div>
+   <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
 
     <form th:action="@{/tasks/save}" method="post" th:object="${task}"
     style="max-width: 500px; margin: 0 auto;">
+        <input type="hidden" th:field="*{task_id}">
         <div class="border border-secondary rounded">
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Deadline:</label>
