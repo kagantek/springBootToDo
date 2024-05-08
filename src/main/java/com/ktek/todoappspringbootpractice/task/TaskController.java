@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -33,4 +34,19 @@ public class TaskController{
 
         return "redirect:/tasks";
     }
+
+    @GetMapping("/tasks/edit/{task_id}")
+    public String showEditTaskForm(@PathVariable("task_id") Integer task_id, Model model) {
+        try {
+            Task task = service.get(task_id);
+            model.addAttribute("task", task);
+            model.addAttribute("pageTitle", "Edit Task (ID: " + task_id + ")");
+            return "task_form";
+        } catch (TaskNotFoundException e) {
+            e.printStackTrace();
+            return "redirect:/tasks";
+        }
+    }
+
+
 }

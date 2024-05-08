@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -15,5 +16,14 @@ public class TaskService {
 
     public void save(Task task) {
         repo.save(task);
+    }
+
+    public Task get(Integer id) throws TaskNotFoundException {
+        Optional<Task> result = repo.findById(id);
+        if(result.isPresent()) {
+            return result.get();
+        }
+
+        throw new TaskNotFoundException("Couldn't find any tasks with ID " + id);
     }
 }
