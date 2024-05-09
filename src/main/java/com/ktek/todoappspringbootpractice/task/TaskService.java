@@ -26,4 +26,8 @@ public class TaskService {
 
         throw new TaskNotFoundException("Couldn't find any tasks with ID " + id);
     }
+
+    public void delete(Integer id)  {
+        repo.deleteById(id);
+    }
 }
