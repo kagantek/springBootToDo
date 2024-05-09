@@ -50,6 +50,6 @@ public class TaskController{
     @GetMapping("/tasks/delete/{task_id}")
     public String deleteUser(@PathVariable("task_id") Integer id) {
         service.delete(id);
-        return "redirect:/task";
+        return "redirect:/tasks";
     }
 }
